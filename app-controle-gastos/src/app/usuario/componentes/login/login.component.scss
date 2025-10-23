@@ -1,0 +1,155 @@
+/* Container da página de login */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Card do login */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  padding: 2.5rem;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+.login-card h3 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-align: center;
+  color: #1a202c;
+  margin-bottom: 2rem;
+}
+
+/* Grupo de formulário para alinhamento */
+.mb-3 {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label dos campos */
+.form-label {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  display: block;
+}
+
+/* Inputs */
+.form-control {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+  transition: all 0.2s ease;
+  border: 2px solid #e2e8f0;
+  font-size: 1rem;
+  background-color: #f7fafc;
+  box-sizing: border-box;
+}
+
+.form-control::placeholder {
+  color: #a0aec0;
+}
+
+/* Foco nos inputs */
+.form-control:focus {
+  border-color: #667eea;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+/* Botão principal */
+.btn-primary {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  background: #cbd5e0;
+}
+
+/* Alerta de erro */
+.alert {
+  border-radius: 10px;
+  font-size: 0.875rem;
+  padding: 0.875rem 1rem;
+  border: none;
+}
+
+.alert-danger {
+  background-color: #fed7d7;
+  color: #c53030;
+}
+
+/* Utilitários */
+.w-100 {
+  width: 100%;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .login-page {
+    padding: 1rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .login-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .form-control {
+    font-size: 0.9375rem;
+  }
+}
