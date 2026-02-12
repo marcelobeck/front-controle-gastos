@@ -4,13 +4,13 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-gastos-fixos',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  templateUrl: './gastos-fixos.component.html',
+  styleUrls: ['./gastos-fixos.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class GastosFixosComponent implements OnInit {
 
   meses = [
     { value: 1,  label: 'Janeiro'   },
@@ -31,14 +31,6 @@ export class DashboardComponent implements OnInit {
   selectedMes: number = new Date().getMonth() + 1;
   selectedAno: number = new Date().getFullYear();
 
-  // Valores do resumo — substitua pela chamada ao seu serviço
-  gastosFixos: number = 0;
-  gastosVariaveis: number = 0;
-
-  get totalGastos(): number {
-    return this.gastosFixos + this.gastosVariaveis;
-  }
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -49,7 +41,7 @@ export class DashboardComponent implements OnInit {
   }
 
   atualizar(): void {
-    // TODO: chamar o serviço e popular gastosFixos e gastosVariaveis
+    // Chame aqui o serviço para buscar os dados do mês/ano selecionado
     console.log('Buscando dados:', this.selectedMes, this.selectedAno);
   }
 }

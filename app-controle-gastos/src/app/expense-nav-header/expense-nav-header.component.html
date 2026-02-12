@@ -1,0 +1,40 @@
+<div class="expense-container">
+  <div class="header-top">
+    <h1>Sistema de Gastos Pessoais</h1>
+    <button class="close-btn" (click)="onClose()">×</button>
+  </div>
+
+  <div class="blue-header">
+    <h2>Controle de Gastos Pessoais</h2>
+    <div class="user-info">
+      <span>Bem-vindo, {{ userEmail }}</span>
+      <button class="btn-logout" (click)="onLogout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="tabs-container">
+    <button
+      class="tab-btn"
+      [class.active]="currentView === 'dashboard'"
+      (click)="navigateTo('dashboard')">
+      Dashboard
+    </button>
+
+    <button
+      class="tab-btn"
+      [class.active]="currentView === 'gastos-fixos'"
+      (click)="navigateTo('gastos-fixos')">
+      Gastos Fixos
+    </button>
+
+    <button
+      class="tab-btn"
+      [class.active]="currentView === 'transacoes'"
+      (click)="navigateTo('transacoes')">
+      Transações Variáveis
+    </button>
+  </div>
+
+  <!-- Cada tab renderiza seu componente aqui -->
+  <router-outlet />
+</div>

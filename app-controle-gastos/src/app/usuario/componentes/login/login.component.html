@@ -1,39 +1,41 @@
 <div class="login-page">
   <div class="login-card">
-    <h3 class="mb-4">Login</h3>
+    <h2>Login</h2>
+    
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <!-- E-mail -->
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
         <input 
           type="email" 
-          class="form-control" 
+          class="form-control form-control-lg" 
           id="email"
           formControlName="email"
-          placeholder="seu@email.com"
+          placeholder="joao.silva@email.com"
         />
       </div>
 
       <!-- Senha -->
-      <div class="mb-3">
+      <div class="mb-4">
         <label for="senha" class="form-label">Senha</label>
         <input 
           type="password" 
-          class="form-control" 
+          class="form-control form-control-lg" 
           id="senha"
           formControlName="senha"
-          placeholder="Digite sua senha"
+          placeholder="••••••••••••"
         />
       </div>
 
       <!-- Botão -->
-      <button 
-        type="submit" 
-        class="btn btn-primary w-100 mt-2"
-        [disabled]="loginForm.invalid"
-      >
-        Entrar
-      </button>
+      <div class="mt-3">
+        <button 
+          type="submit" 
+          class="btn btn-primary btn-lg w-100"
+          [disabled]="loginForm.invalid"
+        >
+          Entrar
+        </button>
+      </div>
     </form>
 
     <!-- Alerta de erro -->
