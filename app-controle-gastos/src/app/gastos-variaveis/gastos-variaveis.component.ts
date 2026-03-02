@@ -1,8 +1,8 @@
-import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-export interface GastoFixo {
+export interface GastoVariaveis {
   id: number;
   descricao: string;
   valorMensal: number;
@@ -10,13 +10,13 @@ export interface GastoFixo {
 }
 
 @Component({
-  selector: 'app-gastos-fixos',
+  selector: 'app-gastos-variaveis',
   standalone: true,
-  imports: [FormsModule, CurrencyPipe],
-  templateUrl: './gastos-fixos.component.html',
-  styleUrls: ['./gastos-fixos.component.scss']
+  imports: [CommonModule, FormsModule, CurrencyPipe],
+  templateUrl: './gastos-variaveis.component.html',
+  styleUrls: ['./gastos-variaveis.component.scss']
 })
-export class GastosFixosComponent implements OnInit {
+export class GastosVariaveisComponent implements OnInit {
 
   categorias = [
     'Moradia',
@@ -35,17 +35,17 @@ export class GastosFixosComponent implements OnInit {
     categoria: 'Moradia'
   };
 
-  gastosFixos: GastoFixo[] = [];
+  gastosVariaveis: GastoVariaveis[] = [];
   private nextId = 1;
 
   ngOnInit(): void {}
 
-  adicionarGastoFixo(): void {
+  adicionarGastoVariavel(): void {
     if (!this.novoGasto.descricao.trim() || this.novoGasto.valorMensal <= 0) {
       return;
     }
 
-    this.gastosFixos.push({
+    this.gastosVariaveis.push({
       id: this.nextId++,
       descricao: this.novoGasto.descricao.trim(),
       valorMensal: this.novoGasto.valorMensal,
@@ -61,10 +61,10 @@ export class GastosFixosComponent implements OnInit {
   }
 
   removerGasto(id: number): void {
-    this.gastosFixos = this.gastosFixos.filter(g => g.id !== id);
+    this.gastosVariaveis = this.gastosVariaveis.filter(g => g.id !== id);
   }
 
-  editarGasto(gasto: GastoFixo): void {
+  editarGasto(gasto: GastoVariaveis): void {
     // Preenche o formulário com os dados do gasto para edição
     this.novoGasto = {
       descricao: gasto.descricao,

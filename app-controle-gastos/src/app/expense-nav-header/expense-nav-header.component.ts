@@ -20,7 +20,7 @@ export class ExpenseNavHeaderComponent {
   get currentView(): string {
     const url = this.router.url;
     if (url.includes('gastos-fixos')) return 'gastos-fixos';
-    if (url.includes('transacoes'))   return 'transacoes';
+    if (url.includes('gastos-variaveis'))   return 'gastos-variaveis';
     return 'dashboard';
   }
 

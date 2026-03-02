@@ -3,6 +3,7 @@ import { LoginComponent } from './usuario/componentes/login/login.component';
 import { ExpenseNavHeaderComponent } from './expense-nav-header/expense-nav-header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GastosFixosComponent } from './gastos-fixos/gastos-fixos.component';
+import { GastosVariaveisComponent } from './gastos-variaveis/gastos-variaveis.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
       { path: '',             redirectTo: 'home', pathMatch: 'full' },
       { path: 'home',         component: DashboardComponent },
       { path: 'gastos-fixos', component: GastosFixosComponent },
+      { path: 'gastos-variaveis', component: GastosVariaveisComponent },
     ]
   },
 

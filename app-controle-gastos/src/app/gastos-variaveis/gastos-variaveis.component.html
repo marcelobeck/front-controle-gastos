@@ -1,14 +1,13 @@
 <div class="page-container">
 
-  <!-- Formulário: Adicionar Gasto Fixo -->
+  <!-- Formulário: Adicionar Gasto Variáveis -->
   <div class="card">
-    <h2 class="card-title">Adicionar Gasto Fixo Mensal</h2>
+    <h2 class="card-title">Adicionar Gasto Variáveis Mensal</h2>
 
     <!-- Descrição -->
     <div class="form-group">
       <label class="form-label">Descrição</label>
-      <input class="form-input" type="text" [(ngModel)]="novoGasto.descricao"
-        placeholder="Ex: Academia, Aluguel, Internet..." />
+      <input class="form-input" type="text" [(ngModel)]="novoGasto.descricao" placeholder="Ex: Gasolina, Mercado..." />
     </div>
 
     <!-- Valor -->
@@ -28,14 +27,14 @@
       </select>
     </div>
 
-    <button class="btn-adicionar" (click)="adicionarGastoFixo()">
-      Adicionar Gasto Fixo
+    <button class="btn-adicionar" (click)="adicionarGastoVariavel()">
+      Adicionar Gasto Variáveis
     </button>
   </div>
 
   <!-- Tabela: Gastos Fixos Cadastrados -->
   <div class="card">
-    <h2 class="card-title">Gastos Fixos Cadastrados</h2>
+    <h2 class="card-title">Gastos Variáveis Cadastrados</h2>
 
     <table class="tabela">
       <thead>
@@ -47,12 +46,12 @@
         </tr>
       </thead>
       <tbody>
-        @if (gastosFixos.length === 0) {
+        @if (gastosVariaveis.length === 0) {
         <tr>
-          <td colspan="4" class="empty-msg">Nenhum gasto fixo cadastrado</td>
+          <td colspan="4" class="empty-msg">Nenhum gasto variável cadastrado</td>
         </tr>
         }
-        @for (gasto of gastosFixos; track gasto.id) {
+        @for (gasto of gastosVariaveis; track gasto.id) {
         <tr>
           <td>{{ gasto.descricao }}</td>
           <td>{{ gasto.valorMensal | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</td>
