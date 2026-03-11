@@ -35,7 +35,15 @@
 
   <!-- Tabela: Gastos Fixos Cadastrados -->
   <div class="card">
-    <h2 class="card-title">Gastos Fixos Cadastrados</h2>
+    <div class="tabela-header">
+      <h2 class="card-title">Gastos Fixos Cadastrados</h2>
+
+      <div class="mes-seletor">
+        <button class="btn-mes" (click)="mesAnterior()">&#8249;</button>
+        <span class="mes-label">{{ labelMesFiltro }}</span>
+        <button class="btn-mes" (click)="mesPosterior()">&#8250;</button>
+      </div>
+    </div>
 
     <table class="tabela">
       <thead>
@@ -49,7 +57,7 @@
       <tbody>
         @if (gastosFixos.length === 0) {
         <tr>
-          <td colspan="4" class="empty-msg">Nenhum gasto fixo cadastrado</td>
+          <td colspan="4" class="empty-msg">Nenhum gasto fixo {{ labelMesFiltro }}</td>
         </tr>
         }
         @for (gasto of gastosFixos; track gasto.id) {

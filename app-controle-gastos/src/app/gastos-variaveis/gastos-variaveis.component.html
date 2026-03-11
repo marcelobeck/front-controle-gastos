@@ -32,9 +32,15 @@
     </button>
   </div>
 
-  <!-- Tabela: Gastos Fixos Cadastrados -->
   <div class="card">
-    <h2 class="card-title">Gastos Variáveis Cadastrados</h2>
+    <div class="tabela-header">
+      <h2 class="card-title">Gastos Variáveis Cadastrados</h2>
+      <div class="mes-seletor">
+        <button class="btn-mes" (click)="mesAnterior()">&#8249;</button>
+        <span class="mes-label">{{ labelMesFiltro }}</span>
+        <button class="btn-mes" (click)="mesPosterior()">&#8250;</button>
+      </div>
+    </div>
 
     <table class="tabela">
       <thead>
@@ -48,7 +54,7 @@
       <tbody>
         @if (gastosVariaveis.length === 0) {
         <tr>
-          <td colspan="4" class="empty-msg">Nenhum gasto variável cadastrado</td>
+          <td colspan="4" class="empty-msg">Nenhum gasto variável {{ labelMesFiltro }}</td>
         </tr>
         }
         @for (gasto of gastosVariaveis; track gasto.id) {

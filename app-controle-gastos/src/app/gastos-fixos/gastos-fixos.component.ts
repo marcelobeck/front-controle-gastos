@@ -7,6 +7,8 @@ export interface GastoFixo {
   descricao: string;
   valorMensal: number;
   categoria: string;
+  mes: number;
+  ano: number;
 }
 
 @Component({
@@ -38,6 +40,42 @@ export class GastosFixosComponent implements OnInit {
   gastosFixos: GastoFixo[] = [];
   private nextId = 1;
 
+  mesFiltro: number = new Date().getMonth();
+  anoFiltro: number = new Date().getFullYear();
+
+  readonly nomeMeses = [
+    'Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+    'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'
+  ];
+
+  get labelMesFiltro(): string {
+    return `${this.nomeMeses[this.mesFiltro]} ${this.anoFiltro}`;
+  }
+
+  get gastosFiltrados(): GastoFixo[] {
+    return this.gastosFixos.filter(
+      g => g.mes === this.mesFiltro && g.ano === this.anoFiltro
+    );
+  }
+
+    mesAnterior(): void {
+    if (this.mesFiltro === 0) {
+      this.mesFiltro = 11;
+      this.anoFiltro--;
+    } else {
+      this.mesFiltro--;
+    }
+  }
+
+  mesPosterior(): void {
+    if (this.mesFiltro === 11) {
+      this.mesFiltro = 0;
+      this.anoFiltro++;
+    } else {
+      this.mesFiltro++;
+    }
+  }
+
   ngOnInit(): void {}
 
   adicionarGastoFixo(): void {
@@ -49,7 +87,9 @@ export class GastosFixosComponent implements OnInit {
       id: this.nextId++,
       descricao: this.novoGasto.descricao.trim(),
       valorMensal: this.novoGasto.valorMensal,
-      categoria: this.novoGasto.categoria
+      categoria: this.novoGasto.categoria,
+      mes: new Date().getMonth(),  
+      ano: new Date().getFullYear()
     });
 
     // Reset form

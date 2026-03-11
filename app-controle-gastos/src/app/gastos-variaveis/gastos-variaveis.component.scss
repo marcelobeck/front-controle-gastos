@@ -156,3 +156,48 @@
   background: #fee2e2;
   color: #ef4444;
 }
+
+.tabela-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mes-seletor {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f8f9ff;
+  border: 1.5px solid #c7d2fe;  // 👈 essa linha
+  border-radius: 8px;
+  padding: 4px 6px;
+}
+
+.mes-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  min-width: 140px;
+  text-align: center;
+}
+
+.btn-mes {
+  background: #e0e7ff;
+  color: #3d5af1;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #c7d2fe;
+  }
+}
